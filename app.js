@@ -68,3 +68,16 @@ var swiper = new Swiper(".review-slider", {
         disableOnInteraction: false,
     },
 });
+
+function sendwhatsapp() {
+    var phoneNumber = "+917597290818";
+    var name = document.querySelector('.name').value
+    var email = document.querySelector('.email').value
+    var number = document.querySelector('.number').value
+    var subject = document.querySelector('.subject').value
+    var message = document.querySelector('.message').value
+
+    if (!name || !number || !message) {
+        prompt("Enter all the details")
+    }
+}

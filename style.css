@@ -79,7 +79,7 @@ section {
     text-align: center;
     padding-top: 6rem;
     margin: 2rem auto;
-    max-width: 100rem;
+    max-width: 80rem;
 }
 
 .home .content h3 {
@@ -573,8 +573,11 @@ html::-webkit-scrollbar-thumb {
     html {
         font-size: 50%;
     }
+    .header {
+        max-width: 46rem;
+    }
     .home .home-slider .swiper-slide {
-        width: 27rem;
+        width: 20rem;
     }
     .contact form .inputBox input {
         width: 100%;
