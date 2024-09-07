@@ -10,7 +10,7 @@
 
 <body>
     <!-- header section starts  -->
-    <header class="header">
+    <header class="header navbar">
         <a href="#" class="logo"><span>P</span>un<span>e</span>vent</a>
 
         <nav class="navbar">
@@ -62,77 +62,68 @@
                     <textarea id="message" class="message" placeholder="Describe Your Stall" name="message" cols="30" rows="10" required></textarea>
                     <button type="submit" class="btn">Submit</button>
                 </form>
-                <div id="loading-message" style="display: none">
+                <div id="loading-message" style="display: none; color: #fc7f09">
                     Processing your request, please wait...
                 </div>
             </div>
         </section>
     </section>
     <script>
-        document
-            .getElementById("bookingForm")
-            .addEventListener("submit", function(e) {
-                e.preventDefault(); // Prevent the default form submission
+        document.getElementById("bookingForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent the default form submission
 
-                var submitButton = document.querySelector("button.btn");
-                if (submitButton) {
-                    submitButton.disabled = true;
-                }
+            var submitButton = document.querySelector("button.btn");
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
 
-                var formData = {
-                    name: document.getElementById("name") ?
-                        document.getElementById("name").value : "",
-                    address: document.getElementById("address") ?
-                        document.getElementById("address").value : "",
-                    contact: document.getElementById("number") ?
-                        document.getElementById("number").value : "",
-                    email: document.getElementById("email") ?
-                        document.getElementById("email").value : "",
-                    stallType: document.getElementById("stall-type") ?
-                        document.getElementById("stall-type").value : "",
-                    message: document.getElementById("message") ?
-                        document.getElementById("message").value : "",
-                    eventName: document.getElementById("eventName") ?
-                        document.getElementById("eventName").textContent.split(": ")[1] : "",
-                    eventDate: document.getElementById("eventDate") ?
-                        document.getElementById("eventDate").textContent.split(": ")[1] : "",
-                };
+            var formData = {
+                name: document.getElementById("name") ? document.getElementById("name").value : "",
+                address: document.getElementById("address") ? document.getElementById("address").value : "",
+                contact: document.getElementById("number") ? document.getElementById("number").value : "",
+                email: document.getElementById("email") ? document.getElementById("email").value : "",
+                stallType: document.getElementById("stall-type") ? document.getElementById("stall-type").value : "",
+                message: document.getElementById("message") ? document.getElementById("message").value : "",
+                eventName: document.getElementById("eventName") ? document.getElementById("eventName").textContent.split(": ")[1] : "",
+                eventDate: document.getElementById("eventDate") ? document.getElementById("eventDate").textContent.split(": ")[1] : "",
+            };
 
-                var loadingMessage = document.getElementById("loading-message");
-                if (loadingMessage) {
-                    loadingMessage.style.display = "block";
-                }
-                fetch(
-                        "https://script.google.com/macros/s/AKfycbzMzHg-lxKxhCWgOZu3cMrLdnpsn6KPJPRsMwMijCe1eKjPrc2u0BWA1S_dPicexdxT/exec", {
-                            method: "POST",
-                            body: JSON.stringify(formData),
-                        }
-                    )
-                    .then((response) => response.json())
-                    .then((data) => {
-                        document.getElementById("success-message").style.display =
-                            "block";
-                        document.getElementById("loading-message").style.display = "none"; // Hide loading message
-                        // Define the pre-set sponsor number
-                        var sponsorNumber = "+919548551920"; // Replace with your sponsor number
+            var loadingMessage = document.getElementById("loading-message");
+            if (loadingMessage) {
+                loadingMessage.style.display = "block";
+            }
 
-                        // Delay the redirection to allow for form processing
-                        setTimeout(function() {
-                            // Create a temporary link element
-                            var link = document.createElement('a');
-                            link.href = `tel:${sponsorNumber}`;
-                            link.style.display = 'none';
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                        }, 2000); // 1 second delay
-                    })
-                    .catch((error) => {
-                        console.error("Error!", error.message);
-                        document.getElementById("loading-message").style.display = "none"; // Hide loading message on error
-                    });
-            });
+            fetch("https://script.google.com/macros/s/AKfycbzMzHg-lxKxhCWgOZu3cMrLdnpsn6KPJPRsMwMijCe1eKjPrc2u0BWA1S_dPicexdxT/exec", {
+                    method: "POST",
+                    body: JSON.stringify(formData),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("success-message").style.display = "block";
+                    document.getElementById("loading-message").style.display = "none"; // Hide loading message
+
+                    // Define the pre-set sponsor number
+                    var sponsorNumber = "+919548551920"; // Replace with your sponsor number
+
+                    // Delay the redirection to allow for form processing
+                    setTimeout(function() {
+                        // Create a hidden link element
+                        var link = document.createElement('a');
+                        link.href = `tel:${sponsorNumber}`;
+                        link.style.display = 'none';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }, 2000); // 2 seconds delay
+                })
+                .catch((error) => {
+                    console.error("Error!", error.message);
+                    document.getElementById("loading-message").style.display = "none"; // Hide loading message on error
+                });
+        });
     </script>
+
+    <script src="../scripts/app.js"></script>
 </body>
 
 </html>

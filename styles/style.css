@@ -204,70 +204,120 @@ section {
     line-height: 2;
 }
 
+
+/* General Styles */
+
+.gallery {
+    padding: 2rem;
+    background-color: #222;
+    /* Light background for contrast */
+}
+
+.gallery .heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    color: #fff;
+}
+
 .gallery .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
+    justify-items: center;
 }
+
+
+/* Modern Box Styling */
 
 .gallery .box-container .box {
-    position: relative;
-    border: 1rem solid #333;
+    background-color: #fff;
+    /* White background for modern look */
     border-radius: 0.5rem;
-    height: 25rem;
-    cursor: pointer;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.gallery .box-container .box:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+
+/* Image Styling */
 
 .gallery .box-container .box img {
-    height: 100%;
     width: 100%;
+    height: 300px;
+    /* Adjust height as needed */
     object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
-.gallery .box-container .box:hover img {
-    transform: scale(1.1);
-    filter: grayscale();
+.gallery .box-container .box img:hover {
+    opacity: 0.9;
+    /* Slight opacity change on hover */
 }
 
-.gallery .box-container .box .title {
-    position: absolute;
-    top: -10rem;
-    left: 0;
-    right: 0;
+
+/* Event Info Styling */
+
+.gallery .box-container .box .event-info {
+    padding: 1rem;
     background: #333;
+    /* Dark background for text contrast */
     color: #fff;
     text-align: center;
-    padding-bottom: 1rem;
+}
+
+.gallery .box-container .box .event-info .event-title {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.gallery .box-container .box:hover .title {
-    top: 0;
+.gallery .box-container .box .event-info .event-date {
+    font-size: 1.8rem;
 }
 
-.gallery .box-container .box .icons {
-    position: absolute;
-    bottom: -10rem;
-    left: 0;
-    right: 0;
-    background: #333;
-    padding-top: 1rem;
-    text-align: center;
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .gallery .heading {
+        font-size: 2rem;
+    }
+    .gallery .box-container .box .event-info {
+        padding: 0.75rem;
+    }
+    .gallery .box-container .box .event-info .event-title {
+        font-size: 1.4rem;
+    }
+    .gallery .box-container .box .event-info .event-date {
+        font-size: 1rem;
+    }
 }
 
-.gallery .box-container .box:hover .icons {
-    bottom: 0;
-}
-
-.gallery .box-container .box .icons a {
-    font-size: 2rem;
-    margin: 0.5rem 1rem;
-    color: #fff;
-}
-
-.gallery .box-container .box .icons a:hover {
-    color: var(--theme-color);
+@media (max-width: 480px) {
+    .gallery .heading {
+        font-size: 1.5rem;
+    }
+    .gallery .box-container .box img {
+        height: 150px;
+        /* Adjust for smaller screens */
+    }
+    .gallery .box-container .box .event-info {
+        padding: 0.5rem;
+    }
+    .gallery .box-container .box .event-info .event-title {
+        font-size: 1.2rem;
+    }
+    .gallery .box-container .box .event-info .event-date {
+        font-size: 0.9rem;
+    }
 }
 
 .price .box-container {

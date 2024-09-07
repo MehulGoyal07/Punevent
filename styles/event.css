@@ -54,6 +54,8 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 9%;
+    transition: background 0.3s ease;
+    /* Smooth transition for background color */
 }
 
 .header .logo {
@@ -66,10 +68,16 @@ section {
     color: var(--theme-color);
 }
 
+.header .navbar {
+    display: flex;
+    align-items: center;
+}
+
 .header .navbar a {
     font-size: 1.7rem;
     color: #fff;
     margin-left: 2rem;
+    text-decoration: none;
 }
 
 .header .navbar a:hover {
@@ -81,6 +89,7 @@ section {
     color: #fff;
     cursor: pointer;
     display: none;
+    /* Initially hidden */
 }
 
 .events {
@@ -129,14 +138,6 @@ section {
     color: #fff;
 }
 
-#loading-message {
-    display: none;
-    font-size: 1.2em;
-    color: #ff9900;
-    text-align: center;
-    margin-top: 20px;
-}
-
 .stall form .inputBox {
     display: flex;
     justify-content: space-between;
@@ -177,59 +178,69 @@ section {
     resize: none;
 }
 
+
+/* Media queries for responsiveness */
+
 @media (max-width: 991px) {
     html {
         font-size: 55%;
     }
     .header {
-        padding: 1.5rem 2rem;
+        padding: 1rem;
     }
-    section {
-        padding: 2rem;
+    .header .logo {
+        font-size: 2rem;
+    }
+    .header .navbar a {
+        font-size: 1.5rem;
+        margin-left: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    #menu-bars {
-        display: initial;
-    }
     .header .navbar {
+        display: none;
+        /* Hide navbar on small screens */
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        border-top: 0.1rem solid #222;
         background: #333;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index: 9999;
+        padding: 1rem 0;
     }
     .header .navbar.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    .fa-times {
-        transform: rotate(180deg);
+        display: flex;
+        /* Show navbar when active */
     }
     .header .navbar a {
-        display: flex;
-        background: #222;
-        border-radius: 0.5rem;
-        padding: 1.3rem;
-        margin: 1.3rem;
+        padding: 1rem;
         font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #444;
+        /* Add border between items */
     }
-    @media (max-width: 450px) {
-        html {
-            font-size: 50%;
-        }
-        .header {
-            max-width: 46rem;
-        }
-        .bookings .stall {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .inputBox {
-            flex: 1;
-            margin: 5px;
-        }
+    #menu-bars {
+        display: flex;
+        /* Show hamburger menu */
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .header {
+        padding: 1rem;
+    }
+    .header .logo {
+        font-size: 1.8rem;
+    }
+    .header .navbar a {
+        font-size: 1.4rem;
     }
 }
