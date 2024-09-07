@@ -5,14 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/event.css" />
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!--swiper css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <title>Event Booking</title>
 </head>
 
 <body>
     <!-- header section starts  -->
-    <header class="header navbar">
+    <header class="header">
         <a href="#" class="logo"><span>P</span>un<span>e</span>vent</a>
-
         <nav class="navbar">
             <a href="../index.html#home">home</a>
             <a href="../index.html#service">service</a>
@@ -21,7 +27,6 @@
             <a href="../index.html#review">review</a>
             <a href="../index.html#contact">contact</a>
         </nav>
-
         <div id="menu-bars" class="fas fa-bars"></div>
     </header>
     <section class="events">
@@ -60,13 +65,57 @@
               </select>
                     </div>
                     <textarea id="message" class="message" placeholder="Describe Your Stall" name="message" cols="30" rows="10" required></textarea>
-                    <button type="submit" class="btn">Submit</button>
+                    <button type="submit" class="btn"><a href="tel:9548551920" style="color: white;">Submit</a></button>
                 </form>
                 <div id="loading-message" style="display: none; color: #fc7f09">
                     Processing your request, please wait...
                 </div>
             </div>
         </section>
+    </section>
+    <!-- footer section starts  -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>branches</h3>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +919527272609</a>
+                <a href="#"> <i class="fas fa-envelope"></i> sales.kuberevents@gmail.com </a>
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>Shri Krushna Apartment, Flat no- 12 Markal road opp. Suvrana Hotel Alandi Devachi
+                </a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+            </div>
+        </div>
+
+        <div class="credit">
+            copyright <span>Punevent</span> | all rights reserved
+        </div>
     </section>
     <script>
         document.getElementById("bookingForm").addEventListener("submit", function(e) {
@@ -121,9 +170,35 @@
                     document.getElementById("loading-message").style.display = "none"; // Hide loading message on error
                 });
         });
-    </script>
 
-    <script src="../scripts/app.js"></script>
+        let menu = document.querySelector("#menu-bars");
+        let navbar = document.querySelector(".navbar");
+
+        menu.onclick = () => {
+            menu.classList.toggle("fa-times");
+            navbar.classList.toggle("active");
+        };
+
+        // let themeToggler = document.querySelector(".theme-toggler");
+        // let toggleBtn = document.querySelector(".toggle-btn");
+
+        // toggleBtn.onclick = () => {
+        //     themeToggler.classList.toggle("active");
+        // };
+
+        window.onscroll = () => {
+            menu.classList.remove("fa-times");
+            navbar.classList.remove("active");
+            themeToggler.classList.remove("active");
+        };
+
+        document.querySelectorAll(".theme-toggler .theme-btn").forEach((btn) => {
+            btn.onclick = () => {
+                let color = btn.style.background;
+                document.querySelector(":root").style.setProperty("--theme-color", color);
+            };
+        });
+    </script>
 </body>
 
 </html>

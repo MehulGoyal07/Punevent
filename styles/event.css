@@ -43,55 +43,6 @@ section {
     text-transform: uppercase;
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10000;
-    background: #333;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 9%;
-    transition: background 0.3s ease;
-    /* Smooth transition for background color */
-}
-
-.header .logo {
-    font-weight: bolder;
-    color: #fff;
-    font-size: 2.5rem;
-}
-
-.header .logo span {
-    color: var(--theme-color);
-}
-
-.header .navbar {
-    display: flex;
-    align-items: center;
-}
-
-.header .navbar a {
-    font-size: 1.7rem;
-    color: #fff;
-    margin-left: 2rem;
-    text-decoration: none;
-}
-
-.header .navbar a:hover {
-    color: var(--theme-color);
-}
-
-#menu-bars {
-    font-size: 3rem;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-    /* Initially hidden */
-}
-
 .events {
     padding-top: 10rem;
 }
@@ -129,19 +80,21 @@ section {
 }
 
 .stall {
-    max-width: 70rem;
+    max-width: 90rem;
     margin: 2rem auto;
     background: #333;
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
     color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .stall form .inputBox {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* Stack inputs vertically on smaller screens */
+    margin: 0.7rem 0;
 }
 
 .stall form .inputBox input,
@@ -151,17 +104,16 @@ section {
     background: #444;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin: 0.7rem 0;
     font-size: 1.5rem;
     color: #fff;
     text-transform: none;
+    margin: 0.7rem 0;
 }
 
 .stall form .inputBox input::placeholder,
 .stall form select,
 .stall form textarea::placeholder {
     color: #eee;
-    text-transform: capitalize;
 }
 
 .stall form .inputBox input:focus,
@@ -170,63 +122,49 @@ section {
     background: #555;
 }
 
-.stall form .inputBox input {
-    width: 49%;
-}
-
 .stall form textarea {
     resize: none;
 }
 
 
-/* Media queries for responsiveness */
+/* Media Queries for Responsiveness */
 
 @media (max-width: 991px) {
     html {
         font-size: 55%;
     }
-    .header {
-        padding: 1rem;
-    }
-    .header .logo {
-        font-size: 2rem;
-    }
-    .header .navbar a {
-        font-size: 1.5rem;
-        margin-left: 1rem;
+    .stall {
+        padding: 1.5rem;
+        /* Reduced padding on medium screens */
     }
 }
 
 @media (max-width: 768px) {
+    #menu-bars {
+        display: initial;
+    }
     .header .navbar {
-        display: none;
-        /* Hide navbar on small screens */
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
+        border-top: 0.1rem solid #222;
         background: #333;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        z-index: 9999;
-        padding: 1rem 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
     .header .navbar.active {
-        display: flex;
-        /* Show navbar when active */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .fa-times {
+        transform: rotate(180deg);
     }
     .header .navbar a {
-        padding: 1rem;
-        font-size: 2rem;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #444;
-        /* Add border between items */
-    }
-    #menu-bars {
         display: flex;
-        /* Show hamburger menu */
+        background: #222;
+        border-radius: 0.5rem;
+        padding: 1.3rem;
+        margin: 1.3rem;
+        font-size: 2rem;
     }
 }
 
@@ -242,5 +180,9 @@ section {
     }
     .header .navbar a {
         font-size: 1.4rem;
+    }
+    .stall {
+        padding: 0.5rem;
+        /* Minimal padding on extra small screens */
     }
 }
