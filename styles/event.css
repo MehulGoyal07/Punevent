@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
-    --theme-color: #0d47a1;
+    --theme-color: #fc7f09;
 }
 
 * {
     font-family: "Poppins", sans-serif;
     margin: 0;
-    /* padding: 0; */
     box-sizing: border-box;
     outline: none;
     border: none;
@@ -24,6 +23,7 @@ html {
 
 body {
     background: #222;
+    color: #fff;
 }
 
 section {
@@ -36,10 +36,11 @@ section {
     padding: 0.8rem 3rem;
     font-size: 1.7rem;
     border-radius: 0.5rem;
-    background: #666;
+    background: var(--theme-color);
     color: #fff;
     cursor: pointer;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .header {
@@ -82,7 +83,7 @@ section {
     display: none;
 }
 
-.bookings {
+.events {
     padding-top: 10rem;
 }
 
@@ -96,13 +97,44 @@ section {
 
 .heading span {
     color: var(--theme-color);
-    text-transform: uppercase;
 }
 
-.stall form {
+.event-details {
     max-width: 70rem;
-    margin: 1rem auto;
+    margin: 2rem auto;
+    background: #333;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: #fff;
+}
+
+.event-details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.event-details p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+.stall {
+    max-width: 70rem;
+    margin: 2rem auto;
+    background: #333;
+    border-radius: 1rem;
+    padding: 2rem;
     text-align: center;
+    color: #fff;
+}
+
+#loading-message {
+    display: none;
+    font-size: 1.2em;
+    color: #ff9900;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .stall form .inputBox {
@@ -112,9 +144,10 @@ section {
 }
 
 .stall form .inputBox input,
+.stall form select,
 .stall form textarea {
     width: 100%;
-    background: #333;
+    background: #444;
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 0.7rem 0;
@@ -124,14 +157,16 @@ section {
 }
 
 .stall form .inputBox input::placeholder,
+.stall form select,
 .stall form textarea::placeholder {
     color: #eee;
     text-transform: capitalize;
 }
 
 .stall form .inputBox input:focus,
+.stall form select:focus,
 .stall form textarea:focus {
-    background: #444;
+    background: #555;
 }
 
 .stall form .inputBox input {
@@ -141,7 +176,6 @@ section {
 .stall form textarea {
     resize: none;
 }
-
 
 @media (max-width: 991px) {
     html {
@@ -182,21 +216,20 @@ section {
         margin: 1.3rem;
         font-size: 2rem;
     }
-
-@media (max-width: 450px) {
-    html {
-        font-size: 50%;
+    @media (max-width: 450px) {
+        html {
+            font-size: 50%;
+        }
+        .header {
+            max-width: 46rem;
+        }
+        .bookings .stall {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .inputBox {
+            flex: 1;
+            margin: 5px;
+        }
     }
-    .header {
-        max-width: 46rem;
-    }
-    .bookings .stall{
-        display: flex;
-    flex-wrap: wrap;
-    }
-    .inputBox{
-        flex: 1;
-        margin: 5px;
-    }
-}
 }

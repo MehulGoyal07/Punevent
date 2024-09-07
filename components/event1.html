@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html lang=""en>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Punevent</title>
-    
-        <!--swiper css-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    
-        <!--font awesome-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    
-        <!--css file-->
-        <link rel="stylesheet" href="../styles/event.css" />
-    </head>
-    <body>
-        <!-- header section starts  -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/event.css" />
+    <title>Event Booking</title>
+</head>
+
+<body>
+    <!-- header section starts  -->
     <header class="header">
         <a href="#" class="logo"><span>P</span>un<span>e</span>vent</a>
 
@@ -31,22 +24,115 @@
 
         <div id="menu-bars" class="fas fa-bars"></div>
     </header>
-    
-    <section class="bookings">
-        <h1 class="heading">wanna book <span>a stall</span></h1>
-        <div class="stall">
-            <form  id="bookingForm" action="https://formsubmit.co/4ec26c2ef8ec4601eebdc240b23237d3" method="POST">
-                <div class="inputBox">
-                    <input type="text" class="name" placeholder="name" name="Name"/>
-                    <input type="email" class="email" placeholder="email" name="email"/>
-                </div>
-                <div class="inputBox">
-                    <input type="tel" class="number" placeholder="Contact Number" name="number"/>
-                </div>
-                <textarea class="message" placeholder="Describe Your Stall" name="message" cols="30" rows="10"></textarea>
-                <button type="submit" class="btn">Submit</button>
-            </form>
+    <section class="events">
+        <h1 class="heading">Our <span>Events</span></h1>
+        <div class="event-details">
+            <h2 id="eventName">Upcoming Event: Event Title</h2>
+            <p id="eventDate">Date: 2024-10-10</p>
+            <p id="eventVenue">Venue: XYZ Hall</p>
+            <p id="eventDescription">
+                Description: This is a sample event description.
+            </p>
         </div>
+        <section class="book-my-stall">
+            <h2 class="heading">Book <span>My Stall</span></h2>
+            <div class="stall">
+                <form id="bookingForm" action="javascript:void(0);" method="POST">
+                    <div class="inputBox">
+                        <input type="text" id="name" class="name" placeholder="Name" name="name" required autocomplete="name" />
+                        <input type="email" id="email" class="email" placeholder="Email" name="email" required autocomplete="email" />
+                    </div>
+                    <div class="inputBox">
+                        <input type="tel" id="number" class="number" placeholder="Contact Number" name="number" required autocomplete="tel" />
+                        <input type="text" id="address" class="address" placeholder="Address" name="address" required autocomplete="address" />
+                    </div>
+                    <div class="inputBox">
+                        <select id="stall-type" class="stall-type" name="stallType" required>
+                <option value="" disabled selected>Select Type of Stall</option>
+                <option value="merchandise">Merchandise (all products)</option>
+                <option value="promotional">
+                  Promotional (Branding, promotion, services)
+                </option>
+                <option value="food">Food (All food products)</option>
+                <option value="sponsorship">
+                  Sponsorship (title sponsor, co-sponsor, media partner)
+                </option>
+              </select>
+                    </div>
+                    <textarea id="message" class="message" placeholder="Describe Your Stall" name="message" cols="30" rows="10" required></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <div id="loading-message" style="display: none">
+                    Processing your request, please wait...
+                </div>
+            </div>
+        </section>
     </section>
-    </body>
+    <script>
+        document
+            .getElementById("bookingForm")
+            .addEventListener("submit", function(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                var submitButton = document.querySelector("button.btn");
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+
+                var formData = {
+                    name: document.getElementById("name") ?
+                        document.getElementById("name").value : "",
+                    address: document.getElementById("address") ?
+                        document.getElementById("address").value : "",
+                    contact: document.getElementById("number") ?
+                        document.getElementById("number").value : "",
+                    email: document.getElementById("email") ?
+                        document.getElementById("email").value : "",
+                    stallType: document.getElementById("stall-type") ?
+                        document.getElementById("stall-type").value : "",
+                    message: document.getElementById("message") ?
+                        document.getElementById("message").value : "",
+                    eventName: document.getElementById("eventName") ?
+                        document.getElementById("eventName").textContent.split(": ")[1] : "",
+                    eventDate: document.getElementById("eventDate") ?
+                        document.getElementById("eventDate").textContent.split(": ")[1] : "",
+                };
+
+                var loadingMessage = document.getElementById("loading-message");
+                if (loadingMessage) {
+                    loadingMessage.style.display = "block";
+                }
+                fetch(
+                        "https://script.google.com/macros/s/AKfycbzMzHg-lxKxhCWgOZu3cMrLdnpsn6KPJPRsMwMijCe1eKjPrc2u0BWA1S_dPicexdxT/exec", {
+                            method: "POST",
+                            body: JSON.stringify(formData),
+                        }
+                    )
+                    .then((response) => response.json())
+                    .then((data) => {
+                        document.getElementById("success-message").style.display =
+                            "block";
+                        document.getElementById("loading-message").style.display = "none"; // Hide loading message
+                        // Define the pre-set sponsor number
+                        var sponsorNumber = "+919548551920"; // Replace with your sponsor number
+
+                        // Delay the redirection to allow for form processing
+                        setTimeout(function() {
+                            // Create a temporary link element
+                            var link = document.createElement('a');
+                            link.href = `tel:${sponsorNumber}`;
+                            link.style.display = 'none';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }, 2000); // 1 second delay
+                    })
+                    .catch((error) => {
+                        console.error("Error!", error.message);
+                        document.getElementById("loading-message").style.display = "none"; // Hide loading message on error
+                    });
+            });
+    </script>
+</body>
+
 </html>
