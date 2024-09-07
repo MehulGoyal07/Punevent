@@ -29,8 +29,10 @@
         </nav>
         <div id="menu-bars" class="fas fa-bars"></div>
     </header>
+    <section class="image-section"></section>
+    <img src="../images/gallery2.jpg" alt="Event Image" class="header-image">
+    </section>
     <section class="events">
-        <h1 class="heading">Our <span>Events</span></h1>
         <div class="event-details">
             <h2 id="eventName">Upcoming Event: Event Title</h2>
             <p id="eventDate">Date: 2024-10-10</p>
@@ -65,7 +67,7 @@
               </select>
                     </div>
                     <textarea id="message" class="message" placeholder="Describe Your Stall" name="message" cols="30" rows="10" required></textarea>
-                    <button type="submit" class="btn"><a href="tel:9548551920" style="color: white;">Submit</a></button>
+                    <button type="submit" class="btn" onclick="call()">Submit</button>
                 </form>
                 <div id="loading-message" style="display: none; color: #fc7f09">
                     Processing your request, please wait...
@@ -73,6 +75,7 @@
             </div>
         </section>
     </section>
+
     <!-- footer section starts  -->
     <section class="footer">
         <div class="box-container">
@@ -150,20 +153,6 @@
                 .then((data) => {
                     document.getElementById("success-message").style.display = "block";
                     document.getElementById("loading-message").style.display = "none"; // Hide loading message
-
-                    // Define the pre-set sponsor number
-                    var sponsorNumber = "+919548551920"; // Replace with your sponsor number
-
-                    // Delay the redirection to allow for form processing
-                    setTimeout(function() {
-                        // Create a hidden link element
-                        var link = document.createElement('a');
-                        link.href = `tel:${sponsorNumber}`;
-                        link.style.display = 'none';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    }, 2000); // 2 seconds delay
                 })
                 .catch((error) => {
                     console.error("Error!", error.message);
@@ -171,33 +160,9 @@
                 });
         });
 
-        let menu = document.querySelector("#menu-bars");
-        let navbar = document.querySelector(".navbar");
-
-        menu.onclick = () => {
-            menu.classList.toggle("fa-times");
-            navbar.classList.toggle("active");
-        };
-
-        // let themeToggler = document.querySelector(".theme-toggler");
-        // let toggleBtn = document.querySelector(".toggle-btn");
-
-        // toggleBtn.onclick = () => {
-        //     themeToggler.classList.toggle("active");
-        // };
-
-        window.onscroll = () => {
-            menu.classList.remove("fa-times");
-            navbar.classList.remove("active");
-            themeToggler.classList.remove("active");
-        };
-
-        document.querySelectorAll(".theme-toggler .theme-btn").forEach((btn) => {
-            btn.onclick = () => {
-                let color = btn.style.background;
-                document.querySelector(":root").style.setProperty("--theme-color", color);
-            };
-        });
+        function call() {
+            window.open(`tel:+919548551920`);
+        }
     </script>
 </body>
 

@@ -6,6 +6,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
     --theme-color: #fc7f09;
+    --primary-color: #fc7f09;
+    /* Orange */
+    --secondary-color: #db6e09;
+    /* Darker Orange */
+    --text-color: #18181b;
+    /* Dark Text */
+    --background-color: #fff;
+    /* White background */
+    --border-color: #ececec;
+    /* Light Grey */
+    --button-hover-color: #e56500;
+    /* Hover color for buttons */
 }
 
 * {
