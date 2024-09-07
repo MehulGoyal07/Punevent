@@ -288,35 +288,35 @@ section {
 
 @media (max-width: 768px) {
     .gallery .heading {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     .gallery .box-container .box .event-info {
         padding: 0.75rem;
     }
     .gallery .box-container .box .event-info .event-title {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
     .gallery .box-container .box .event-info .event-date {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     .gallery .heading {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     .gallery .box-container .box img {
-        height: 150px;
+        height: 200px;
         /* Adjust for smaller screens */
     }
     .gallery .box-container .box .event-info {
         padding: 0.5rem;
     }
     .gallery .box-container .box .event-info .event-title {
-        font-size: 1.2rem;
+        font-size: 2.8rem;
     }
     .gallery .box-container .box .event-info .event-date {
-        font-size: 0.9rem;
+        font-size: 1.5rem;
     }
 }
 
