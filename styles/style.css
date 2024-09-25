@@ -6,7 +6,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 :root {
     --theme-color: #fc7f09;
+    --bg-color: #222;
     --primary-color: #fc7f09;
+    --frame-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.6);
     /* Orange */
     --secondary-color: #db6e09;
     /* Darker Orange */
@@ -87,51 +90,164 @@ section {
     display: none;
 }
 
-.home .content {
+.home {
+    margin-top: 10rem;
+    padding: 7rem 2rem 6rem;
     text-align: center;
-    padding-top: 6rem;
-    margin: 2rem auto;
-    max-width: 80rem;
+}
+
+.home .content {
+    margin-bottom: 3rem;
 }
 
 .home .content h3 {
     color: #fff;
-    font-size: 4.5rem;
-    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bolder;
+    line-height: 1.3;
+    margin-bottom: 1rem;
 }
 
 .home .content h3 span {
     color: var(--theme-color);
-    text-transform: uppercase;
 }
 
 .btn {
     margin-top: 1rem;
     display: inline-block;
-    padding: 0.8rem 3rem;
-    font-size: 1.7rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.5rem;
     border-radius: 0.5rem;
     background: #666;
-    color: #fff;
+    color: var(--text-color);
     cursor: pointer;
     font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
 
 .btn:hover {
     background: var(--theme-color);
 }
 
-.home .home-slider .swiper-slide {
-    overflow: hidden;
-    border-radius: 0.5rem;
-    height: 50rem;
-    width: 35rem;
+.collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
 }
 
-.home .home-slider .swiper-slide img {
-    height: 100%;
+.collage-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collage-item img {
     width: 100%;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.1);
+}
+
+.collage-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+
+/* Define specific grid item sizes */
+
+.collage-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.collage-item:nth-child(4) {
+    grid-row: span 2;
+}
+
+
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+    .home {
+        padding: 5rem 1rem;
+    }
+    .home .content h3 {
+        font-size: 2.5rem;
+    }
+    .btn {
+        padding: 0.6rem 2rem;
+        font-size: 1.3rem;
+    }
+    .collage-item:nth-child(1),
+    .collage-item:nth-child(4) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        padding: 4rem 1rem;
+    }
+    .home .content h3 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.6rem 1.8rem;
+        font-size: 1.2rem;
+    }
+    .collage {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 0.8rem;
+    }
+    .collage-item:nth-child(1),
+    .collage-item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        padding: 3rem 1rem;
+    }
+    .home .content h3 {
+        font-size: 1.8rem;
+    }
+    .btn {
+        padding: 0.5rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    .collage {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .collage-item {
+        box-shadow: none;
+    }
+    .collage-item img {
+        transition: none;
+    }
+    .collage-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    .collage-item:nth-child(1),
+    .collage-item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
 }
 
 .heading {
@@ -1071,5 +1187,191 @@ html::-webkit-scrollbar-thumb {
         max-width: 800px;
         margin: 0 auto 40px;
         display: block;
+    }
+}
+
+
+/*Create Event form CSS*/
+
+
+/* Basic Reset for Form Elements */
+
+
+/* Basic Reset for Form Elements */
+
+form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.event-section {
+    background: #333;
+    /* Dark background for the form */
+    color: #fff;
+    /* White text color */
+    padding: 2.5rem 2rem;
+    /* Increased padding */
+    border-radius: 1rem;
+    /* More rounded corners */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow */
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.event-section h2 {
+    font-size: 2.75rem;
+    /* Increased font size */
+    margin-bottom: 2.5rem;
+    /* Increased spacing */
+    color: #fff;
+    /* Heading color */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    /* Increased spacing */
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.4rem;
+    /* Increased font size for labels */
+    margin-bottom: 0.75rem;
+    /* Increased margin */
+    color: #ddd;
+    /* Light color for labels */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    /* Increased padding */
+    border: none;
+    border-radius: 0.75rem;
+    /* More rounded corners */
+    font-size: 1.3rem;
+    /* Increased font size */
+    box-sizing: border-box;
+    background: #444;
+    /* Dark background for input fields */
+    color: #fff;
+    /* White text color for inputs */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder {
+    color: #aaa;
+    /* Light gray placeholder text color */
+    font-size: 1.3rem;
+    /* Increased font size of placeholder text */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background: #555;
+    /* Slightly lighter background on focus */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    /* Subtle glow effect */
+    outline: none;
+}
+
+.form-group input[type="file"] {
+    padding: 1rem;
+    /* Increased padding */
+    background: #444;
+    /* Dark background for file input */
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1.25rem;
+    /* Increased padding */
+    border: none;
+    border-radius: 0.75rem;
+    /* More rounded corners */
+    background: linear-gradient(135deg, #fc7f09, #e06b00);
+    /* Gradient background */
+    color: #fff;
+    font-size: 1.4rem;
+    /* Increased font size for button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #e06b00, #fc7f09);
+    /* Inverted gradient on hover */
+    transform: translateY(-3px);
+    /* Subtle lift effect */
+}
+
+.submit-btn:active {
+    background: #e06b00;
+    transform: translateY(1px);
+    /* Subtle press effect */
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .event-section {
+        padding: 2rem 1.5rem;
+    }
+    .event-section h2 {
+        font-size: 2.5rem;
+    }
+    .form-group label {
+        font-size: 1.2rem;
+    }
+    .form-group input,
+    .form-group select {
+        font-size: 1.2rem;
+    }
+    .submit-btn {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-section {
+        padding: 1.5rem;
+    }
+    .event-section h2 {
+        font-size: 2rem;
+    }
+    .form-group label {
+        font-size: 1.1rem;
+    }
+    .form-group input,
+    .form-group select {
+        font-size: 1.1rem;
+    }
+    .submit-btn {
+        font-size: 1.2rem;
     }
 }
