@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
 
     <!--css file-->
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <style>
+
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ9K4HEXR5"></script>
     <script>
@@ -32,13 +35,13 @@
 
 <body>
     <!-- header section starts  -->
-    <header class="header">
+    <!-- <header class="header">
         <a href="#" class="logo"><span>P</span>un<span>e</span>vent</a>
 
         <nav class="navbar">
             <a href="#home">home</a>
             <a href="#service">events</a>
-            <!-- <a href="#service">create event</a> -->
+            <a href="#service">create event</a>
             <a href="./pages/aboutUs.html">about</a>
             <a href="#gallery">gallery</a>
             <a href="#blog">blogs</a>
@@ -46,40 +49,194 @@
         </nav>
 
         <div id="menu-bars" class="fas fa-bars"></div>
+    </header> -->
+    <header class="header" id="main-header">
+        <a href="#" class="logo"><span>P</span>un<span>e</span>vent</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#service">events</a>
+            <a href="./pages/aboutUs.html">about</a>
+            <a href="#gallery">gallery</a>
+            <a href="./pages/createEvent.html">Create Event</a>
+            <a href="./pages/contactUs.html">contact</a>
+        </nav>
+        <div id="menu-bars" class="fas fa-bars"></div>
     </header>
 
-    <!-- home section starts -->
-    <section class="home" id="home">
-        <div class="content">
-            <h3>
-                "Creating Extraordinary Events That Reflect Your Unique Style and Story"
-                <br />
-                <span>Punevent</span>
-            </h3>
-            <a href="https://wa.me/9527272609" class="btn">WhatsApp now</a>
+    <!-- Video section -->
+    <section class="video-container">
+        <video autoplay muted loop id="bg-video">
+        <source src="../demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+        <!-- Content overlapping video -->
+        <!-- <div class="overlay-content">
+            <h1>Welcome to PunEvent</h1>
+            <p>Your trusted partner for all event needs.</p>
+        </div> -->
+    </section>
+
+    <!-- Rest of the content -->
+    <section class="three-cards">
+        <div class="card" style="background-image: url('images/about.jpg')">
+            <div class="card-content">
+                <h3>
+                    Punevent: Your Trusted Partner for Seamless Event Management in Pune
+                </h3>
+                <p>
+                    Organizing a large-scale event, whether it's a political rally, a grand wedding, or a corporate gathering, is no small feat. With so many moving parts, the smallest oversight can have significant consequences. This is where Punevent comes in. As a leading
+                    event management company in Pune.
+                </p>
+                <a href="blog-post-1.html" class="back-link">Read More</a>
+            </div>
         </div>
 
+        <div class="card" style="background-image: url('images/about.jpg')">
+            <div class="card-content">
+                <h3>
+                    Why Hiring Professional Event Managers is Crucial for Flawless Events in Pune
+                </h3>
+                <p>
+                    Planning an event can be a daunting task, whether it's a high-profile political rally, a dream wedding, or a corporate gathering. It’s not just about the glitz and glamour—behind every successful event is a mountain of logistical planning, vendor coordination,
+                    and last-minute problem-solving.
+                </p>
+                <a href="blog-post-2.html" class="back-link">Read More</a>
+            </div>
+        </div>
+
+        <div class="card" style="background-image: url('images/about.jpg')">
+            <div class="card-content">
+                <h3>The Ultimate Guide to Corporate Event Planning</h3>
+                <p>
+                    Planning a wedding is an exciting yet daunting task. From selecting the perfect venue to choosing the right menu, every detail counts. In this guide, we'll walk you through the essential steps to plan a wedding that reflects your unique love story. Determine
+                    how much you're willing to spend and allocate funds to different aspects of the wedding accordingly. This will help you make informed decisions and avoid overspending.
+                </p>
+                <a href="blog-post-3.html" class="back-link">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- service section starts  -->
+    <h1 class="heading" style="margin-top: 20px;">events <span>managed</span></h1>
+    <section class="service" id="service">
+        <div class="box-container">
+            <div class="box">
+                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-content">
+                    <h3 style="margin-bottom: 20px;">Corporate</h3>
+                    <a href="./pages/corporate.html" class="back-link">See More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-content">
+                    <h3 style="margin-bottom: 20px;">Wedding</h3>
+                    <a href="./pages/wedding.html" class="back-link">See More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-content">
+                    <h3 style="margin-bottom: 20px;">Birthday</h3>
+                    <a href="./pages/birthday.html" class="back-link">See More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-content">
+                    <h3 style="margin-bottom: 20px;">Sports</h3>
+                    <a href="./pages/sports.html" class="back-link">See More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-content">
+                    <h3 style="margin-bottom: 20px;">Birthday</h3>
+                    <a href="./pages/birthday.html" class="back-link">See More</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-content">
+                    <h3 style="margin-bottom: 20px;">Sports</h3>
+                    <a href="./pages/sports.html" class="back-link">See More</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- gallery section starts  -->
+    <h1 class="heading" style="margin-top: 20px;">Pune <span>Events</span></h1>
+    <section class="gallery" id="gallery" style="margin-top: 20px; margin-bottom: 50px;">
+        <div class="box-container">
+            <div class="box">
+                <a href="./components/event1.html">
+                    <img src="images/gallery1.jpg" alt="Event 1" />
+                </a>
+                <div class="event-info">
+                    <h3 class="event-title">Event 1 Title</h3>
+                    <p class="event-date"><i class="fas fa-calendar-alt"></i> Date: 2024-10-10</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="./components/event2.html">
+                    <img src="images/gallery2.jpg" alt="Event 2" />
+                </a>
+                <div class="event-info">
+                    <h3 class="event-title">Event 2 Title</h3>
+                    <p class="event-date"><i class="fas fa-calendar-alt"></i> Date: 2024-11-05</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="./components/event3.html">
+                    <img src="images/gallery3.jpg" alt="Event 3" />
+                </a>
+                <div class="event-info">
+                    <h3 class="event-title">Event 3 Title</h3>
+                    <p class="event-date"><i class="fas fa-calendar-alt"></i> Date: 2024-12-20</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- home section starts -->
+
+    <!-- <section class="home" id="home" style="margin-top: 10px">
+        <h1 class="heading">Our <span>Gallery</span></h1>
         <div class="collage">
-            <div class="collage-item">
+            <div class="collage-item tall">
                 <img src="./images/gallery1.jpg" alt="Event Image 1" />
             </div>
-            <div class="collage-item">
+            <div class="collage-item wide">
                 <img src="./images/gallery2.jpg" alt="Event Image 2" />
             </div>
             <div class="collage-item">
                 <img src="./images/gallery3.jpg" alt="Event Image 3" />
             </div>
-            <div class="collage-item">
+            <div class="collage-item wide">
                 <img src="./images/gallery4.jpg" alt="Event Image 4" />
             </div>
-            <div class="collage-item">
+            <div class="collage-item tall">
                 <img src="./images/gallery5.jpg" alt="Event Image 5" />
             </div>
             <div class="collage-item">
                 <img src="./images/gallery6.jpg" alt="Event Image 6" />
             </div>
         </div>
-    </section>
+    </section> -->
+
 
     <!-- Most recent event section -->
 
@@ -99,149 +256,55 @@
         </section>
     </div> -->
 
-    <!-- Create Event Section  -->
-    <h1 class="heading">Create <span>Event</span></h1>
-    <div class="event-section">
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="event-name">Event Name:</label>
-                <input type="text" id="event-name" name="event_name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="event-venue">Event Venue:</label>
-                <input type="text" id="event-venue" name="event_venue" required>
-            </div>
-
-            <div class="form-group">
-                <label for="event-type">Event Type:</label>
-                <select id="event-type" name="event_type" required>
-                    <option value="indoor">Indoor</option>
-                    <option value="outdoor">Outdoor</option>
-                    <option value="both">Both</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="start-date">Start Date:</label>
-                <input type="date" id="start-date" name="start_date" required>
-            </div>
-
-            <div class="form-group">
-                <label for="end-date">End Date:</label>
-                <input type="date" id="end-date" name="end_date" required>
-            </div>
-
-            <div class="form-group">
-                <label for="stalls-available">Number of Stalls Available:</label>
-                <input type="number" id="stalls-available" name="stalls_available" required>
-            </div>
-
-            <div class="form-group">
-                <label for="stall-type">Stall Type:</label>
-                <input type="text" id="stall-type" name="stall_type">
-            </div>
-
-            <div class="form-group">
-                <label for="facilities">Facilities Provided:</label>
-                <input type="text" id="facilities" name="facilities">
-            </div>
-
-            <div class="form-group">
-                <label for="sales-person">Sales Person:</label>
-                <input type="text" id="sales-person" name="sales_person">
-            </div>
-
-            <div class="form-group">
-                <label for="upload-files">Upload Files:</label>
-                <input type="file" id="upload-files" name="upload_files[]" multiple>
-            </div>
-
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
-    </div>
-
-    <!-- service section starts  -->
-    <section class="service" id="service">
-        <h1 class="heading">events <span>managed</span></h1>
-
-        <div class="box-container">
-            <div class="box">
-                <!-- <i class="fas fa-envelope"></i> -->
-                <i class="fa-solid fa-building"></i>
-                <h3>Corporate</h3>
-                <p>Personalized Invitations that Set the Tone.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-photo-video"></i>
-                <h3>Wedding</h3>
-                <p>Capturing Memories that Last a Lifetime.</p>
-            </div>
-
-            <div class="box">
-                <!-- <i class="fas fa-music"></i> -->
-                <i class="fa-solid fa-cake-candles"></i>
-                <h3>Birthday</h3>
-                <p>Entertainment That Thrills and Delights.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-car"></i>
-                <h3>Bachelor Party</h3>
-                <p>Elegant and Stylish Event Transportation.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Sports</h3>
-                <p>Perfect Venues for Every Occasion.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-birthday-cake"></i>
-                <h3>Social events</h3>
-                <p>Culinary Excellence for Every Palate.</p>
+    <!-- Our partners section  -->
+    <h1 class="heading" style="margin-top: 20px;">Our <span>Partners</span></h1>
+    <section class="partners-strip">
+        <div class="slider-strip">
+            <div class="logo-track">
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 1"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 2"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 3"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 4"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 5"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 6"></div>
+                <!-- Repeat logos for continuous effect -->
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 1"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 2"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 3"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 4"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 5"></div>
+                <div class="logo-slide"><img src="../logo_demo.jpeg" alt="Partner 6"></div>
             </div>
         </div>
     </section>
 
-    <!-- gallery section starts  -->
-    <section class="gallery" id="gallery">
-        <h1 class="heading">pune <span>events</span></h1>
-
-        <div class="box-container">
-            <div class="box">
-                <a href="./components/event1.html">
-                    <img src="images/gallery1.jpg" alt="" />
-                </a>
-                <div class="event-info">
-                    <h3 class="event-title">Event 1 Title</h3>
-                    <p class="event-date">Date: 2024-10-10</p>
-                </div>
+    <!-- projects completed section  -->
+    <section class="completed-projects">
+        <h2>SUCCESSFULLY COMPLETED 7000+ PROJECTS</h2>
+        <div class="project-stats">
+            <div class="stat-box">
+                <h3 class="counter" data-target="7000">0</h3>
+                <p>Projects Completed</p>
             </div>
-
-            <div class="box">
-                <a href="./components/event2.html">
-                    <img src="images/gallery2.jpg" alt="" />
-                </a>
-                <div class="event-info">
-                    <h3 class="event-title">Event 2 Title</h3>
-                    <p class="event-date">Date: 2024-11-05</p>
-                </div>
+            <div class="stat-box">
+                <h3 class="counter" data-target="500">0</h3>
+                <p>Happy Clients</p>
             </div>
-
-            <div class="box">
-                <a href="./components/event3.html">
-                    <img src="images/gallery3.jpg" alt="" />
-                </a>
-                <div class="event-info">
-                    <h3 class="event-title">Event 3 Title</h3>
-                    <p class="event-date">Date: 2024-12-20</p>
-                </div>
+            <div class="stat-box">
+                <h3 class="counter" data-target="120">0</h3>
+                <p>Awards Won</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="counter" data-target="1000">0</h3>
+                <p>Consultations</p>
             </div>
         </div>
     </section>
+
+
+
+
+
 
     <!-- price section starts  -->
     <!-- <section class="price" id="price">
@@ -303,9 +366,8 @@
     </section> -->
 
     <!-- review section starts  -->
-    <!-- <section class="reivew" id="review">
-        <h1 class="heading">client's <span>review</span></h1>
-
+    <h1 class="heading">Client's <span>Review</span></h1>
+    <section class="review" id="review" style="margin-bottom: 70px;">
         <div class="review-slider swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide box">
@@ -313,12 +375,12 @@
                     <div class="user">
                         <img src="images/img1.jpg" alt="" />
                         <div class="user-info">
-                            <h3>nayana</h3>
-                            <span>happy customer</span>
+                            <h3>Nayana</h3>
+                            <span>Happy Customer</span>
                         </div>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti."
                     </p>
                 </div>
 
@@ -327,12 +389,12 @@
                     <div class="user">
                         <img src="images/img2.jpg" alt="" />
                         <div class="user-info">
-                            <h3>lisa</h3>
-                            <span>happy customer</span>
+                            <h3>Lisa</h3>
+                            <span>Happy Customer</span>
                         </div>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti."
                     </p>
                 </div>
 
@@ -341,12 +403,12 @@
                     <div class="user">
                         <img src="images/img3.jpg" alt="" />
                         <div class="user-info">
-                            <h3>mary</h3>
-                            <span>happy customer</span>
+                            <h3>Mary</h3>
+                            <span>Happy Customer</span>
                         </div>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti."
                     </p>
                 </div>
 
@@ -355,57 +417,26 @@
                     <div class="user">
                         <img src="images/img4.jpg" alt="" />
                         <div class="user-info">
-                            <h3>rose</h3>
-                            <span>happy customer</span>
+                            <h3>Rose</h3>
+                            <span>Happy Customer</span>
                         </div>
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.
-                    </p>
-                </div>
-                <div class="swiper-slide box">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="images/img4.jpg" alt="" />
-                        <div class="user-info">
-                            <h3>rose</h3>
-                            <span>happy customer</span>
-                        </div>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti, ipsam iure nisi unde et assumenda perspiciatis voluptatibus nihil.
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut corrupti."
                     </p>
                 </div>
             </div>
         </div>
-    </section> -->
-
-    <!-- contact section starts  -->
-    <section class="contact" id="contact">
-        <h1 class="heading"><span>contact</span> us</h1>
-
-        <form action="">
-            <div class="inputBox">
-                <input type="text" class="name" placeholder="name" />
-                <input type="email" class="email" placeholder="email" />
-            </div>
-            <div class="inputBox">
-                <input type="tel" class="number" placeholder="number" />
-                <input type="text" class="subject" placeholder="subject" />
-            </div>
-            <textarea name="" class="message" placeholder="message" id="" cols="30" rows="10"></textarea>
-            <input type="submit" onclick="" value="send via whatsapp" class="btn" />
-        </form>
     </section>
 
+
     <!-- Blog Section -->
-    <section id="blog" class="blog-section" id="blog">
+    <!-- <section id="blog" class="blog-section" id="blog">
         <div class="container">
             <h2 class="section-title">
                 Our Latest <span style="color: #fff">Blogs</span>
             </h2>
             <div class="blog-grid">
-                <!-- Blog Post 1 -->
                 <div class="blog-card">
                     <div class="blog-image">
                         <img src="https://via.placeholder.com/400x250" alt="Blog Post 1" />
@@ -422,7 +453,6 @@
                         <a href="blog-post-1.html" class="read-more">Read More</a>
                     </div>
                 </div>
-                <!-- Blog Post 2 -->
                 <div class="blog-card">
                     <div class="blog-image">
                         <img src="https://via.placeholder.com/400x250" alt="Blog Post 2" />
@@ -439,7 +469,6 @@
                         <a href="blog-post-2.html" class="read-more">Read More</a>
                     </div>
                 </div>
-                <!-- Blog Post 3 -->
                 <div class="blog-card">
                     <div class="blog-image">
                         <img src="https://via.placeholder.com/400x250" alt="Blog Post 3" />
@@ -455,57 +484,61 @@
                         <a href="blog-post-3.html" class="read-more">Read More</a>
                     </div>
                 </div>
-                <!-- Add more blog posts as needed -->
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- footer section starts  -->
     <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>branches</h3>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+        <div class="container">
+            <div class="footer-box">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bangalore</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Hyderabad</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Delhi</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Kolkata</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Chennai</a></li>
+                </ul>
             </div>
 
-            <div class="box">
-                <h3>quick links</h3>
-                <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Services</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Gallery</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Reviews</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Contact</a></li>
+                </ul>
             </div>
 
-            <div class="box">
-                <h3>contact info</h3>
-                <a href="#"> <i class="fas fa-phone"></i> +919527272609</a>
-                <a href="#">
-                    <i class="fas fa-envelope"></i> sales.kuberevents@gmail.com
-                </a>
-                <a href="#">
-                    <i class="fas fa-map-marker-alt"></i>Shri Krushna Apartment, Flat no- 12 Markal road opp. Suvrana Hotel Alandi Devachi
-                </a>
+            <div class="footer-box">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-phone"></i> +919527272609</a></li>
+                    <li><a href="mailto:sales.kuberevents@gmail.com"><i class="fas fa-envelope"></i> sales.kuberevents@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Shri Krushna Apartment, Flat no-12, Markal Road, Alandi Devachi</a></li>
+                </ul>
             </div>
 
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-                <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
             </div>
         </div>
 
-        <div class="credit">
-            copyright <span>Punevent</span> | all rights reserved
+        <div class="footer-credit">
+            <p>&copy; 2024 <span>Punevent</span> | All rights reserved.</p>
         </div>
     </section>
+
 
     <!-- theme toggler  -->
     <!-- <div class="theme-toggler">
@@ -527,7 +560,7 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!--JS file-->
     <script src="./scripts/app.js"></script>
 </body>
