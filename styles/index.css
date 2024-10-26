@@ -756,33 +756,43 @@ section {
     padding-right: 0.5rem;
 }
 
-.review .heading {
+
+/* Review Section Styling */
+
+.heading {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 2rem;
     color: #fff;
 }
 
-.review .heading span {
+.heading span {
     color: var(--theme-color);
+    /* Keeps the original theme color */
+}
+
+.review {
+    padding: 2rem 0;
+    background-color: #333;
 }
 
 .review-slider {
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .review .box {
-    background: #333;
+    background-color: #444;
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     position: relative;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
 .review .box:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .review .box .fa-quote-right {
@@ -793,38 +803,71 @@ section {
     color: #fff;
 }
 
-.review .box .user {
+.review .user {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.review .box .user img {
+.review .user img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--theme-color);
+    /* Original border color */
 }
 
-.review .box .user-info {
+.review .user-info {
     margin-left: 1rem;
 }
 
-.review .box .user-info h3 {
+.review .user-info h3 {
     font-size: 1.5rem;
+    margin: 0;
     color: #fff;
 }
 
-.review .box .user-info span {
-    color: #fff;
+.review .user-info span {
+    font-size: 1rem;
+    color: #aaa;
 }
 
 .review .box p {
     font-size: 1.2rem;
-    color: #fff;
+    color: #ddd;
     line-height: 1.6;
-    margin: 1rem 0 0;
+}
+
+
+/* Responsive Styling */
+
+@media (max-width: 768px) {
+    .review-slider {
+        width: 95%;
+    }
+    .heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .review .box {
+        padding: 1.5rem;
+    }
+    .review .user img {
+        width: 50px;
+        height: 50px;
+    }
+    .review .user-info h3 {
+        font-size: 1.2rem;
+    }
+    .review .user-info span {
+        font-size: 0.9rem;
+    }
+    .review .box p {
+        font-size: 1rem;
+    }
 }
 
 

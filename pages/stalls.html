@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Plan the Perfect Event | Punevent</title>
+    <!--swiper css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <!-- Link to your main CSS file -->
+    <style>
+        .blog-post-content .container .home-slider .swiper-slide {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            height: 50rem;
+            width: 35rem;
+        }
+        
+        .blog-post-content .container .home-slider .swiper-slide img {
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header section starts  -->
+    <header class="header">
+        <a href="#" class="logo"><span>P</span>un<span>e</span>vent</a>
+
+        <nav class="navbar">
+            <a href="../index.html">home</a>
+            <a href="./index.html#events">events</a>
+            <a href="./index.html#about">about</a>
+            <a href="./index.html#gallery">gallery</a>
+            <a href="./index.html#review">create event</a>
+            <a href="./index.html#contact">contact</a>
+        </nav>
+
+        <div id="menu-bars" class="fas fa-bars"></div>
+    </header>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-content">
+        <div class="container home">
+            <!-- Image Slider -->
+            <div class="content">
+                <h3>
+                    Stalls
+                </h3>
+            </div>
+            <div class="collage">
+                <div class="collage-item">
+                    <img src="../images/gallery1.jpg" alt="Event Image 1" />
+                </div>
+                <div class="collage-item">
+                    <img src="../images/gallery2.jpg" alt="Event Image 2" />
+                </div>
+                <div class="collage-item">
+                    <img src="../images/gallery3.jpg" alt="Event Image 3" />
+                </div>
+                <div class="collage-item">
+                    <img src="../images/gallery4.jpg" alt="Event Image 4" />
+                </div>
+                <div class="collage-item">
+                    <img src="../images/gallery5.jpg" alt="Event Image 5" />
+                </div>
+                <div class="collage-item">
+                    <img src="../images/gallery6.jpg" alt="Event Image 6" />
+                </div>
+            </div>
+            <div class="post-text" style="margin-top: 100px">
+                <p>
+                    Add a dash of excitement with our unique stall and exhibition setups. Whether it’s food stalls, game corners, or product showcases, we provide creative designs and functional layouts that attract visitors and enhance engagement at your events.
+                </p>
+    </section>
+
+    <!-- footer section starts  -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>branches</h3>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
+                <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +919527272609</a>
+                <a href="#">
+                    <i class="fas fa-envelope"></i> sales.kuberevents@gmail.com
+                </a>
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i>Shri Krushna Apartment, Flat no- 12 Markal road opp. Suvrana Hotel Alandi Devachi
+                </a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+            </div>
+        </div>
+
+        <div class="credit">
+            copyright <span>Punevent</span> | all rights reserved
+        </div>
+    </section>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        let menu = document.querySelector("#menu-bars");
+        let navbar = document.querySelector(".navbar");
+
+        menu.onclick = () => {
+            menu.classList.toggle("fa-times");
+            navbar.classList.toggle("active");
+        };
+
+        // let themeToggler = document.querySelector(".theme-toggler");
+        // let toggleBtn = document.querySelector(".toggle-btn");
+
+        // toggleBtn.onclick = () => {
+        //     themeToggler.classList.toggle("active");
+        // };
+
+        window.onscroll = () => {
+            menu.classList.remove("fa-times");
+            navbar.classList.remove("active");
+            themeToggler.classList.remove("active");
+        };
+
+        document.querySelectorAll(".theme-toggler .theme-btn").forEach((btn) => {
+            btn.onclick = () => {
+                let color = btn.style.background;
+                document
+                    .querySelector(":root")
+                    .style.setProperty("--theme-color", color);
+            };
+        });
+
+        var swiper = new Swiper(".home-slider", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+                slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper(".review-slider", {
+            slidesPerView: 1,
+            grabCursor: true,
+            loop: true,
+            spaceBetween: 10,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                700: {
+                    slidesPerView: 2,
+                },
+                1050: {
+                    slidesPerView: 3,
+                },
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+
+</html>
