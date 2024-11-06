@@ -64,22 +64,22 @@
     </header>
 
     <!-- Video section -->
-    <section class="video-container">
+    <!-- <section class="video-container">
         <video autoplay muted loop id="bg-video">
-        <source src="./video/video_punevent.mp4" type="video/mp4" />
+        <source src="./images/video/video_punevent.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
-        <!-- Content overlapping video -->
-        <!-- <div class="overlay-content">
-            <h1>Welcome to PunEvent</h1>
-            <p>Your trusted partner for all event needs.</p>
-        </div> -->
+    </section> -->
+    <section class="video-container">
+        <video autoplay loop muted id="bg-video">
+            <source src="./images/video/video_punevent.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </section>
 
     <!-- Rest of the content -->
     <section class="three-cards">
-        <div class="card" style="background-image: url('images/about.jpg')">
+        <div class="card" style="background-image: url('images/blog-1/blog-1-cover.jpg')">
             <div class="card-content">
                 <h3>
                     Punevent: Your Trusted Partner for Seamless Event Management in Pune
@@ -92,7 +92,7 @@
             </div>
         </div>
 
-        <div class="card" style="background-image: url('images/about.jpg')">
+        <div class="card" style="background-image: url('images/blog-2/blog-2-cover.JPG')">
             <div class="card-content">
                 <h3>
                     Why Hiring Professional Event Managers is Crucial for Flawless Events in Pune
@@ -105,7 +105,7 @@
             </div>
         </div>
 
-        <div class="card" style="background-image: url('images/about.jpg')">
+        <div class="card" style="background-image: url('images/blog-3/blog-3-cover.JPG')">
             <div class="card-content">
                 <h3>Elevate Your Event with Punevent </h3>
                 <p>
@@ -123,7 +123,7 @@
     <section class="service" id="service">
         <div class="box-container">
             <div class="box">
-                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-image" style="background-image: url('images/corporate/corporate-cover.jpg');"></div>
                 <div class="box-content">
                     <h3 style="margin-bottom: 20px;">Corporate</h3>
                     <a href="./pages/corporate.html" class="back-link">See More</a>
@@ -131,7 +131,7 @@
             </div>
 
             <div class="box">
-                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-image" style="background-image: url('images/wedding/wedding-cover.JPG');"></div>
                 <div class="box-content">
                     <h3 style="margin-bottom: 20px;">Wedding</h3>
                     <a href="./pages/wedding.html" class="back-link">See More</a>
@@ -139,7 +139,7 @@
             </div>
 
             <div class="box">
-                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-image" style="background-image: url('images/birthday/birthday-cover.jpg');"></div>
                 <div class="box-content">
                     <h3 style="margin-bottom: 20px;">Birthday</h3>
                     <a href="./pages/birthday.html" class="back-link">See More</a>
@@ -147,7 +147,7 @@
             </div>
 
             <div class="box">
-                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-image" style="background-image: url('images/sports/sports-cover.JPG');"></div>
                 <div class="box-content">
                     <h3 style="margin-bottom: 20px;">Sports</h3>
                     <a href="./pages/sports.html" class="back-link">See More</a>
@@ -155,7 +155,7 @@
             </div>
 
             <div class="box">
-                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-image" style="background-image: url('images/catering/catering-cover.JPG');"></div>
                 <div class="box-content">
                     <h3 style="margin-bottom: 20px;">Catering</h3>
                     <a href="./pages/catering.html" class="back-link">See More</a>
@@ -163,9 +163,9 @@
             </div>
 
             <div class="box">
-                <div class="box-image" style="background-image: url('images/about.jpg');"></div>
+                <div class="box-image" style="background-image: url('images/stalls/stalls-cover.jpg');"></div>
                 <div class="box-content">
-                    <h3 style="margin-bottom: 20px;">Stalls</h3>
+                    <h3 style="margin-bottom: 20px;">Exhibition</h3>
                     <a href="./pages/stalls.html" class="back-link">See More</a>
                 </div>
             </div>
@@ -181,7 +181,7 @@
         <div class="box-container">
             <div class="box">
                 <a href="./components/event1.html">
-                    <img src="images/gallery1.jpg" alt="Event 1" />
+                    <img src="images/events/event-1.jpg" alt="Event 1" />
                 </a>
                 <div class="event-info">
                     <h3 class="event-title">Event 1 Title</h3>
@@ -191,7 +191,7 @@
 
             <div class="box">
                 <a href="./components/event2.html">
-                    <img src="images/gallery2.jpg" alt="Event 2" />
+                    <img src="images/events/event-2.jpg" alt="Event 2" />
                 </a>
                 <div class="event-info">
                     <h3 class="event-title">Event 2 Title</h3>
@@ -201,7 +201,7 @@
 
             <div class="box">
                 <a href="./components/event3.html">
-                    <img src="images/gallery3.jpg" alt="Event 3" />
+                    <img src="images/events/event-3.jpg" alt="Event 3" />
                 </a>
                 <div class="event-info">
                     <h3 class="event-title">Event 3 Title</h3>
@@ -261,19 +261,31 @@
     <section class="partners-strip">
         <div class="slider-strip">
             <div class="logo-track">
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 1"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 2"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 3"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 4"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 5"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 6"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-1.png" alt="Partner 1"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-2.png" alt="Partner 2"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-3.png" alt="Partner 3"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-4.png" alt="Partner 4"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-5.png" alt="Partner 5"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-6.png" alt="Partner 6"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-7.png" alt="Partner 7"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-8.png" alt="Partner 8"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-9.png" alt="Partner 9"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-10.png" alt="Partner 10"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-11.png" alt="Partner 11"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-12.png" alt="Partner 12"></div>
                 <!-- Repeat logos for continuous effect -->
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 1"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 2"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 3"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 4"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 5"></div>
-                <div class="logo-slide"><img src="./images/logo_demo.jpeg" alt="Partner 6"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-1.png" alt="Partner 1"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-2.png" alt="Partner 2"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-3.png" alt="Partner 3"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-4.png" alt="Partner 4"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-5.png" alt="Partner 5"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-6.png" alt="Partner 6"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-7.png" alt="Partner 7"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-8.png" alt="Partner 8"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-9.png" alt="Partner 9"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-10.png" alt="Partner 10"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-11.png" alt="Partner 11"></div>
+                <div class="logo-slide"><img src="images/partner-logos/logo-12.png" alt="Partner 12"></div>
             </div>
         </div>
     </section>
@@ -370,34 +382,43 @@
     <section class="reviews" id="reviews">
         <div class="reviews-container">
             <div class="review-card">
-                <img src="images/img1.jpg" alt="Customer Photo" />
-                <h3>Nayana</h3>
-                <span>Happy Customer</span>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor dicta cum."</p>
+                <!-- <img src="images/img4.jpg" alt="Customer Photo" /> -->
+                <h3>Raj Thakur</h3>
+                <p>"Kuber Events made our company opening ceremony seamless. They handled everything—from decor and logistics to flawless food service, sound, and lighting. Highly recommended for top-notch event management."</p>
             </div>
 
             <div class="review-card">
-                <img src="images/img2.jpg" alt="Customer Photo" />
-                <h3>Lisa</h3>
-                <span>Happy Customer</span>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor dicta cum."</p>
+                <!-- <img src="images/img4.jpg" alt="Customer Photo" /> -->
+                <h3>Abhishek Kavhar</h3>
+                <p>"Kuber Events delivered a well-planned, creative corporate gala that aligned perfectly with our 'Innovation in Tech' theme. Although minor communication gaps arose, the execution, attention to detail, and overall value were exceptional."</p>
             </div>
 
             <div class="review-card">
-                <img src="images/img3.jpg" alt="Customer Photo" />
-                <h3>Mary</h3>
-                <span>Happy Customer</span>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor dicta cum."</p>
+                <!-- <img src="images/img4.jpg" alt="Customer Photo" /> -->
+                <h3>Shenilaq</h3>
+                <p>"Amazing team with incredible energy! Kuber Events planned everything perfectly and delivered mind-blowing decor. Their staff is well-trained and courteous—fantastic service from start to finish."</p>
             </div>
-            <!-- 
+
             <div class="review-card">
-                <img src="images/img4.jpg" alt="Customer Photo" />
-                <h3>Rose</h3>
-                <span>Happy Customer</span>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor dicta cum."</p>
-            </div> -->
+                <!-- <img src="images/img4.jpg" alt="Customer Photo" /> -->
+                <h3>Rajeshkumar Rajesh Taku</h3>
+                <p>"Kuber Events crafted an unforgettable birthday celebration with stunning decor, engaging entertainment, and exquisite food. Their planning made the night seamless, creating lasting memories for everyone."</p>
+            </div>
+
+            <div class="review-card">
+                <!-- <img src="images/img4.jpg" alt="Customer Photo" /> -->
+                <h3>Virendra Mali</h3>
+                <p>"The Corporate Carnival at Pune Chakan MIDC was a lively, well-organized event with excellent entertainment, networking, and food options. Kuber Events created an enjoyable experience for all."</p>
+            </div>
+
+            <div class="review-card">
+                <!-- <img src="images/img4.jpg" alt="Customer Photo" /> -->
+                <h3>Dipali Ramane</h3>
+                <p>"Kuber Events offers excellent service! The team is prompt, courteous, and highly professional. I strongly recommend them for any event."</p>
+            </div>
         </div>
     </section>
+
 
 
 
@@ -466,11 +487,11 @@
             <div class="footer-box">
                 <h3>Our Branches</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Bangalore</a></li>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Hyderabad</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Pune</a></li>
+                    <!-- <li><a href="#"><i class="fas fa-map-marker-alt"></i> Hyderabad</a></li>
                     <li><a href="#"><i class="fas fa-map-marker-alt"></i> Delhi</a></li>
                     <li><a href="#"><i class="fas fa-map-marker-alt"></i> Kolkata</a></li>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Chennai</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Chennai</a></li> -->
                 </ul>
             </div>
 
@@ -478,11 +499,10 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#"><i class="fas fa-arrow-right"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-arrow-right"></i> Services</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Event</a></li>
                     <li><a href="#"><i class="fas fa-arrow-right"></i> About</a></li>
-                    <li><a href="#"><i class="fas fa-arrow-right"></i> Gallery</a></li>
-                    <li><a href="#"><i class="fas fa-arrow-right"></i> Reviews</a></li>
-                    <li><a href="#"><i class="fas fa-arrow-right"></i> Contact</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Create Event</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Contact Us</a></li>
                 </ul>
             </div>
 
