@@ -157,10 +157,11 @@ var reviewSwiper = new Swiper('.review-slider', {
     },
 });
 
-// Select all video elements
-const videos = document.querySelectorAll('video');
+// Select only video elements within the container with the class 'reviews-container'
+const reviewContainer = document.querySelector('.reviews-container');
+const videos = reviewContainer.querySelectorAll('.autoplay-video');
 
-// Define the middle video (assuming the middle video is the second in a set of three)
+// Calculate the middle video index within this container
 const middleVideoIndex = Math.floor(videos.length / 2);
 const middleVideo = videos[middleVideoIndex];
 
