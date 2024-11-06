@@ -305,15 +305,44 @@ section {
     gap: 1.5rem;
 }
 
-.about .row .image {
+.video-container {
     flex: 1 1 45rem;
+    position: relative;
     padding: 1rem;
+    max-width: 100%;
 }
 
-.about .row .image img {
+.video {
     width: 100%;
     border-radius: 0.5rem;
     border: 1rem solid #333;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.video-container:hover .video-overlay {
+    opacity: 1;
+}
+
+.play-btn {
+    font-size: 2.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .about .row .content {

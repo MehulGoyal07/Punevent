@@ -31,8 +31,14 @@
     <!-- about section starts  -->
     <section class="about" id="about" style="margin-bottom: 100px;">
         <div class="row">
-            <div class="image">
-                <img src="../images/about.jpg" alt="" />
+            <div class="video-container">
+                <video id="about-video" class="video" autoplay loop muted>
+                    <source src="../images/video/video_punevent.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay">
+                    <button id="play-btn" class="play-btn">▶</button>
+                </div>
             </div>
 
             <div class="content">
@@ -46,6 +52,7 @@
             </div>
         </div>
     </section>
+
     <!-- footer section starts  -->
     <section class="footer">
         <div class="container">

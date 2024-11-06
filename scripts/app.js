@@ -156,3 +156,56 @@ var reviewSwiper = new Swiper('.review-slider', {
         },
     },
 });
+
+// Select all video elements
+const videos = document.querySelectorAll('video');
+
+// Define the middle video (assuming the middle video is the second in a set of three)
+const middleVideoIndex = Math.floor(videos.length / 2);
+const middleVideo = videos[middleVideoIndex];
+
+// Function to pause all videos except the specified one
+function pauseOtherVideos(exceptVideo) {
+    videos.forEach(video => {
+        if (video !== exceptVideo) {
+            video.pause();
+        }
+    });
+}
+
+// Function to handle video play/pause based on visibility
+function handleMiddleVideoAutoplay(entries) {
+    entries.forEach(entry => {
+        // If the middle video is intersecting, play it and pause others
+        if (entry.isIntersecting && entry.target === middleVideo) {
+            middleVideo.play();
+            pauseOtherVideos(middleVideo);
+        } else if (entry.target === middleVideo) {
+            middleVideo.pause();
+        }
+    });
+}
+
+// Set up an IntersectionObserver to monitor the middle video specifically
+const observerOptions = {
+    root: null, // Use the viewport as the root
+    threshold: 0.7 // Adjust this threshold based on when you want the video to play
+};
+
+const observer = new IntersectionObserver(handleMiddleVideoAutoplay, observerOptions);
+
+// Observe only the middle video
+observer.observe(middleVideo);
+
+// Add click listeners for each video to manually play/pause when clicked
+videos.forEach(video => {
+    video.addEventListener('click', () => {
+        // Toggle play/pause on click
+        if (video.paused) {
+            video.play();
+            pauseOtherVideos(video);
+        } else {
+            video.pause();
+        }
+    });
+});

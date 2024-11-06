@@ -794,15 +794,12 @@ section {
 
 .reviews-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     width: 90%;
     margin: 0 auto;
     padding: 1rem 0;
 }
-
-
-/* Individual Review Card */
 
 .review-card {
     background-color: #444;
@@ -817,20 +814,12 @@ section {
     transform: translateY(-5px);
 }
 
-
-/* Customer Image Styling */
-
-.review-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+.review-card video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
     margin-bottom: 1rem;
-    border: 3px solid var(--theme-color);
 }
-
-
-/* Customer Name and Role */
 
 .review-card h3 {
     margin: 0.5rem 0;
@@ -838,15 +827,12 @@ section {
     font-size: 1.2rem;
 }
 
-.review-card span {
-    color: #bbb;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 1rem;
+.stars {
+    color: #ffd700;
+    /* Gold color for stars */
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
 }
-
-
-/* Review Text */
 
 .review-card p {
     color: #ddd;
@@ -855,18 +841,11 @@ section {
 }
 
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 
 @media (max-width: 480px) {
-    .section-title {
-        font-size: 1.5rem;
-    }
-    .review-card {
+    .reviews-container {
         padding: 1rem;
-    }
-    .review-card img {
-        width: 60px;
-        height: 60px;
     }
     .review-card h3 {
         font-size: 1rem;
