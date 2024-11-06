@@ -242,9 +242,10 @@ section {
     .three-cards {
         flex-direction: column;
         align-items: center;
+        margin-top: 20px;
     }
     .card {
-        width: 80%;
+        width: 90%;
         margin-bottom: 20px;
     }
 }
