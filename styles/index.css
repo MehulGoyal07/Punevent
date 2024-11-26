@@ -50,6 +50,32 @@ section {
     padding: 2rem 9%;
 }
 
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
 
 /* Header styling */
 
@@ -791,68 +817,114 @@ section {
 }
 
 
-/* Container for Reviews */
+/* Reviews Section */
 
-.reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    width: 90%;
-    margin: 0 auto;
-    padding: 1rem 0;
+
+/* General styling */
+
+.reviews {
+    text-align: center;
+    padding: 20px;
+}
+
+.reviews-slider-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.reviews-slider {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease;
+    will-change: transform;
 }
 
 .review-card {
-    background-color: #444;
-    border-radius: 12px;
-    padding: 1.5rem;
+    min-width: 300px;
+    background-color: #333;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.review-card:hover {
-    transform: translateY(-5px);
-}
-
-.review-card video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    font-size: 18px;
 }
 
 .review-card h3 {
-    margin: 0.5rem 0;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.stars {
-    color: #ffd700;
-    /* Gold color for stars */
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
+.review-card .stars {
+    font-size: 20px;
+    color: #db6e09;
+    margin-bottom: 15px;
 }
 
 .review-card p {
-    color: #ddd;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 16px;
+    color: #fff;
 }
 
 
-/* Responsive Design */
+/* Responsive adjustments */
 
-@media (max-width: 480px) {
-    .reviews-container {
-        padding: 1rem;
+@media (max-width: 768px) {
+    .review-card {
+        min-width: 250px;
+        font-size: 16px;
     }
-    .review-card h3 {
-        font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .review-card {
+        min-width: 350px;
+        font-size: 18px;
     }
-    .review-card p {
-        font-size: 0.9rem;
+}
+
+
+/* Testimonials Section */
+
+.testimonials-slider {
+    display: flex;
+    gap: 1.5rem;
+    overflow: hidden;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.testimonial-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/* Mobile View Adjustments */
+
+@media (max-width: 768px) {
+    .reviews-slider {
+        flex-direction: row;
+    }
+    .review-card {
+        min-width: 100%;
+        font-size: 16px;
+    }
+    /* Mobile Testimonials with Increased Gap Between Videos */
+    .testimonials-slider {
+        flex-direction: column;
+    }
+    .testimonial-card {
+        margin-bottom: 30px;
+        /* Increase gap between testimonials */
     }
 }
 
